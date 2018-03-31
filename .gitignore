@@ -1,0 +1,6 @@
+sdk/*
+!sdk/.gitkeep
+src/lib7z.so
+src/*.o
+sample/list_content
+lib/
