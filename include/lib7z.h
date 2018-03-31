@@ -16,20 +16,12 @@
 
 #define kInputBufSize ((size_t)1 << 18)
 
-static void Print(const char *s)
-{
-	          fputs(s, stdout);
-}
-
-
 static const ISzAlloc g_Alloc = { SzAlloc, SzFree };
 
-#if 0
 static void Print(const char *s)
 {
 	  fputs(s, stdout);
 }
-#endif
 
 static int Buf_EnsureSize(CBuf *dest, size_t size)
 {

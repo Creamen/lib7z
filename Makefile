@@ -23,3 +23,5 @@ include:
 
 clean:
 	make -C src clean
+	make -C sample clean
+

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #include "lib7z.h"
 
@@ -12,10 +13,11 @@ int main(int argc, char *argv[], char *arge[])
 	CFileInStream archiveStream;
 	CLookToRead2 lookStream;
 
+	assert(argv != NULL && argv[1] != NULL);
 	allocImp = g_Alloc;
 	allocTempImp = g_Alloc;
 
-	InFile_Open(&archiveStream.file, argv[1]);
+	assert(!InFile_Open(&archiveStream.file, argv[1]));
 	FileInStream_CreateVTable(&archiveStream);
 	LookToRead2_CreateVTable(&lookStream, False);
 	lookStream.buf = NULL;
